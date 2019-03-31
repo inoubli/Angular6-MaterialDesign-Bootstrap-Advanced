@@ -17,5 +17,6 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+  "include": ["src/**/*.ts" , "node_modules/angular-bootstrap-md/**/*.ts"]
 }
