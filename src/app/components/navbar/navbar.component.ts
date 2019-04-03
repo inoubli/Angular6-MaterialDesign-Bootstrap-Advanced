@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/user.service';
 import { Router } from '@angular/router';
 
+import { ToastrService } from 'ngx-toastr';
+
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,13 +12,14 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public userService:UserService,private router:Router) { }
+  constructor(public userService:UserService,private router:Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
   logout(){
     this.userService.deleteToken();
     this.router.navigateByUrl('/signin');
+    this.toastr.info('Déconnexion réussi', 'Déconnexion', { positionClass:'toast-top-center' });
   }
 
 }

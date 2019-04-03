@@ -10,25 +10,25 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>Accueil<span class="sr-only">(current)</span></a>
+        <a [routerLink]="['/']" class="nav-link waves-light" mdbWavesEffect>Accueil<span class="sr-only">(current)</span></a>
       </li>
       <!-- Dropdown -->
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           Fonctionnement<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Comment trouver un prestataire ?</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Comment trouver des clients ?</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Consulter l'aide</a>
+          <a [routerLink]="['/']" class="dropdown-item waves-light" mdbWavesEffect >Comment trouver un prestataire ?</a>
+          <a [routerLink]="['/']" class="dropdown-item waves-light" mdbWavesEffect >Comment trouver des clients ?</a>
+          <a [routerLink]="['/']" class="dropdown-item waves-light" mdbWavesEffect >Consulter l'aide</a>
           <!-- <div class="divider dropdown-divider"></div>
           <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a> -->
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Offres</a>
+        <a [routerLink]="['/']" class="nav-link waves-light" mdbWavesEffect>Offres</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Mes projets</a>
+        <a [routerLink]="['/']" class="nav-link waves-light" mdbWavesEffect>Mes projets</a>
       </li>
 
       
@@ -43,8 +43,8 @@
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" class="img-fluid rounded-circle z-depth-0"></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Log out</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/']">My account</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/']" (click)="logout()">Log out</a>
         </div>
       </li>
     </ul>

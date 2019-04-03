@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr.css';
+
+
+
+/* ---------------------------  Error messages Div ----------------------------*/
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    width: 100%;
+    
+  }
+
+  .success{
+    padding: 20px;
+    background-color:#249424; /* Green */
+    color: white;
+    margin-bottom: 15px;
+  }
+
+
+
