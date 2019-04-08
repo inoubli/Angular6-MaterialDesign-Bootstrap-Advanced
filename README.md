@@ -4,7 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screen Shots
 
+![alt text](https://github.com/inoubli/Angular6-MaterialDesign-Bootstrap-Advanced/blob/master/src/images%20mdbs/login_form.JPG)
+
+![alt text](https://github.com/inoubli/Angular6-MaterialDesign-Bootstrap-Advanced/blob/master/src/images%20mdbs/login_mobile.JPG)
+
+![alt text](https://github.com/inoubli/Angular6-MaterialDesign-Bootstrap-Advanced/blob/master/src/images%20mdbs/menu_mobile.JPG)
+
 ![alt text](https://github.com/inoubli/Angular6-MaterialDesign-Bootstrap-Advanced/blob/master/src/images%20mdbs/Mes%20Projects.JPG)
+
+![alt text](https://github.com/inoubli/Angular6-MaterialDesign-Bootstrap-Advanced/blob/master/src/images%20mdbs/offers.JPG)
 
 ## Development server
 
