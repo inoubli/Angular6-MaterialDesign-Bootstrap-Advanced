@@ -57,7 +57,7 @@ export class SignInComponent implements OnInit {
           this.router.navigateByUrl('/pages/homeSeeker');
 
           let username = this.userService.getUserPayload1().username; //{"id":62,"iat":1554661655,"exp":1554665255,"roles":["ROLE_ADMIN"],"username":"admin"}
-          this.toastr.success('Bienvenue '+username, 'Connexion réussie');
+          this.toastr.success('Bienvenue '+username, 'Connexion réussie', {timeOut: 20000});
         },
         err => {
           this.serverErrorMessages = err.error.message;
