@@ -59,6 +59,16 @@ export class UserService {
       return null;
   }
 
+  getUserPayload1() {
+    var token = this.getToken();
+    if (token) {
+      var userPayload = atob(token.split('.')[1]);   //console.log(userPayload) to see what's the content of Payload
+      return JSON.parse(userPayload); //return it as an object, not a string.
+    }
+    else
+      return {"error" : "user.service.ts -> getUserPayload1() failed !"};
+  }
+
   isLoggedIn() {
     var userPayload = this.getUserPayload();
     if (userPayload)

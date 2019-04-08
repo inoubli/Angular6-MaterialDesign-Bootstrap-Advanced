@@ -1,0 +1,76 @@
+<h2>Project offers </h2>
+
+<p-table [columns]="cols" [value]="offers" selectionMode="single" [(selection)]="selectedOffer" dataKey="id"
+    (onRowSelect)="onRowSelect($event)" >
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 3em"></th>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded" >
+        <tr >
+            <td>
+                <a href="#" [pRowToggler]="rowData">
+                    <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                </a>
+            </td>
+            <td *ngFor="let col of columns">
+               
+                <div [ngSwitch]="col.field">
+                    <div *ngSwitchCase="'published'">{{rowData[col.field] | date }}</div>
+                    <div *ngSwitchCase="'author'">
+                      <span class="badge badge-secondary">{{rowData[col.field].username }}</span>  <br>{{rowData[col.field].pays }}<br>{{rowData[col.field].tel }}
+                    </div>
+                    <div *ngSwitchCase="'status'">
+                            <div *ngIf="(rowData[col.field]=='2')">
+
+                                    <span class="badge badge-success">En cours</span>
+                            </div>
+    
+                            <div *ngIf="!(rowData[col.field]=='2')">
+    
+                                    <span class="badge badge-warning">En attente</span>
+                            </div>
+                    </div>
+                    <div *ngSwitchCase="'filename'"><img src="{{rowData[col.field] }}" class="img-fluid rounded-circle z-depth-2"></div>
+                    <div *ngSwitchDefault>{{rowData[col.field] }}</div>
+                </div>
+                
+
+
+                
+            </td>
+
+            <td>
+              <!-- <i class="fa fa-search" [pSelectableRow]="rowData"></i> -->
+              <a class="btn btn-floating btn-sm blue" ripple-radius  onclick="null" ><i class="fa fa-check "></i></a>
+              <a class="btn btn-floating btn-sm red" ripple-radius   onclick="null"><i class="fa fa-window-close "></i></a>
+            </td>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+        <tr>
+            <td [attr.colspan]="columns.length + 2">
+                    <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
+                      
+                        <div class="ui-g-12 ui-md-9">
+                            <div class="ui-g">
+                               
+                                <div class="ui-g-12">
+                                    <b>description:</b> {{rowData.description}}
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </td>
+        </tr>
+    </ng-template>
+</p-table>

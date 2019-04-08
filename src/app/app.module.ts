@@ -8,6 +8,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { routes, AppRoutingModule } from './app-routing.module';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserService } from './shared/user.service';
@@ -15,7 +17,6 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 
 @NgModule({
@@ -28,13 +29,12 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule ,
     BrowserAnimationsModule, 
     ToastrModule.forRoot()
-
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -30,7 +30,7 @@ export class SignInComponent implements OnInit {
   
   ngOnInit() {
     if(this.userService.isLoggedIn())
-    this.router.navigateByUrl('/pages/dashboard');
+    this.router.navigateByUrl('/pages/homeSeeker');
 
     this.form = this.formBuilder.group({
         username: ['', [Validators.required, Validators.minLength(4)]],
@@ -48,18 +48,20 @@ export class SignInComponent implements OnInit {
     this.submitted = true;
     //console.log(this.form);
     if (this.form.invalid) {
-      console.log("form invalid !");
+      //console.log("form invalid !");
       return;
     }else{
       this.userService.login(this.form.value).subscribe(
         res => {
           this.userService.setToken(res['token']);
-          this.router.navigateByUrl('/pages/dashboard');
-          this.toastr.success('Vous étes connecté!', 'Connexion');
+          this.router.navigateByUrl('/pages/homeSeeker');
+
+          let username = this.userService.getUserPayload1().username; //{"id":62,"iat":1554661655,"exp":1554665255,"roles":["ROLE_ADMIN"],"username":"admin"}
+          this.toastr.success('Bienvenue '+username, 'Connexion réussie');
         },
         err => {
           this.serverErrorMessages = err.error.message;
-          console.log(this.serverErrorMessages);
+          //console.log(this.serverErrorMessages);
         }
       );
     }
