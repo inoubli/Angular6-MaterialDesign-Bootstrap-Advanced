@@ -30,8 +30,8 @@ export class UserService {
     return this.http.post(environment.apiBaseUrl + '/login_check', authCredentials,this.noAuthHeader);
   }
 
-  getUserProfile() {
-    return this.http.get(environment.apiBaseUrl + '/blog_posts');
+  getUserById(id : string) {
+    return this.http.get(environment.apiBaseUrl + '/users/'+ id);
   }
 
 

@@ -42,8 +42,8 @@
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" class="img-fluid rounded-circle z-depth-0"></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/']">My account</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/']" (click)="logout()">Log out</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['pages/profile']">Profile</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/']" (click)="logout()">Déconnexion</a>
         </div>
       </li>
     </ul>
