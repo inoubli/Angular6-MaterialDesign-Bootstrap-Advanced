@@ -1,0 +1,63 @@
+ANGULAR 6 Project [Freelancer plateform] 
+Covering the main used components and modules:
+*Navigation menu + SignIn + SignUp + list of offers + list of projects
+*PrimeNG Tables / Toasts
+*JWT Authentication
+*Image Upload (http://localhost:4200/pages/profile)
+
+
+
+************************************************************************************************************************
+************************************************************************************************************************
+						HTTP QUERIES FOR FREELANCE API (Backend)
+************************************************************************************************************************
+************************************************************************************************************************
+
+USERS :    
+admin					ROLE_SUPERADMIN
+john_doe				ROLE_ADMIN
+rob_smith				ROLE_WRITER
+han_solo				ROLE_EDITOR
+jedi_knight				ROLE_COMMENTATOR
+
+PASSWORD: (secret123#   OR   Secret123#)				
+
+
+POST http://localhost:8000/api/login_check
+{
+	"username": "han_solo",
+	"password": "Secret123#"
+}
+
+GET USER, AND HIS PROJECTS NESTED:
+http://localhost:8000/api/users/65
+
+GET USER PROJECT'S CLEAN (only projects):
+http://localhost:8000/api/users/65/projects
+
+GET PROJECT OFFER'S CLEAN (offers+their author):
+http://localhost:8000/api/projects/798/offers
+
+GET PROJECT OFFER'S BY PAGE
+http://localhost:8000/api/projects/798/offers?page=2
+
+POST USER: 
+http://localhost:8000/api/users
+{
+    "username": "zappalaa",
+    "name": "zappalaa",
+    "password":"Zappalaa123",
+    "retypedPassword":"Zappalaa123",
+    "email":"zappalaa@blog.com",
+    "tel": "22222222",
+    "type": 0,
+    "pays": "Tunisie",
+    "note": 1,
+}
+
+POST IMAGE/FILE :
+http://localhost:8000/api/media_objects
+HEADERS: we dont need content-type, only Authorization Bearer xxxxxxxxxxxxxxxxx
+BODY   : <form-data>    file -> file-selection
+
+
